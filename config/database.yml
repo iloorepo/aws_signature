@@ -1,11 +1,13 @@
 development:
   adapter: postgresql
   database: awssigner_development
+  username: awssigner
   pool: 5
   timeout: 5000
   
 production:
   adapter: postgresql
   database: awssigner_production
+  username: awssigner
   pool: 5
   timeout: 5000
