@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_04_03_234446) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "counters", force: :cascade do |t|
     t.integer "click"
     t.datetime "created_at", null: false
