@@ -1,0 +1,28 @@
+!!! 5
+%html{ :lang => "en" }
+    %head
+        %meta{ :charset => "utf-8" }
+        
+        %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+        
+        %title= content_for?(:title) ? yield(:title) : "AWS | Signature"
+        
+        = stylesheet_link_tag "application"
+        = javascript_include_tag "application", "data-turbolinks-track" => true
+        = csrf_meta_tag
+
+    %body
+        .top-bar
+            .top-bar-left
+                %ul.menu
+                    %li= link_to 'Test credentials', root_path
+                    %li= link_to 'Code', 'https://github.com/iloorepo/aws_signature', target: '_blank'
+        %article.grid-container{style:'padding-top:20px;'}
+            .grid-x.align-center
+                = yield
+                
+            %hr
+            
+            .grid-x.align-justify.align-middle
+                .small-12.medium.shrink.cell
+                    %span= 'Requests: ' + Counter.count.to_s
